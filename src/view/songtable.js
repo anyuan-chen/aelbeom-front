@@ -5,9 +5,7 @@ export default function SongTable() {
     useEffect(() => {
         fetchItems();
     }, []);
-
     const [JSData, setJSData] = useState([]);
-
     const fetchItems = async () => {
         const data = await fetch('http://localhost:1989/get');
         const JSData = await data.json();
@@ -21,7 +19,6 @@ export default function SongTable() {
             <td>{song.rating}</td>
         </tr>
     )
-
     return (
         <Table>
             <thead>
@@ -36,3 +33,5 @@ export default function SongTable() {
     )
     
 }
+
+
